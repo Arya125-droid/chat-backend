@@ -51,6 +51,10 @@ const checkRateLimit = async (sessionId) => {
     }
 };
 
+app.get('/', (req, res) => {
+    res.status(200).json({ status: "Spur Chat Backend is online and healthy!" });
+});
+
 app.post('/chat/message', async (req, res) => {
     try {
         const { message } = req.body;
